@@ -7,12 +7,18 @@
   <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
   <script type="module">
     const rootElement = document.getElementById('root')
+    const helloElement = React.createElement('span', {children: 'Hello '})
+    const worldElement = React.createElement('span', {children: 'World'})
 
-    const elementProps = {children: 'Hello World', className: 'container'}
-    const elementType = 'div'
-    const reactElement = React.createElement(elementType, elementProps)
+    const divElement = React.createElement(
+      'div',
+      {
+        className: 'container',
+      },
+      helloElement,
+      worldElement,
+    )
 
-    const root = ReactDOM.createRoot(rootElement)
-    root.render(reactElement)
+    const root = ReactDOM.createRoot(rootElement).render(divElement)
   </script>
 </body>
