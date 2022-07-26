@@ -2,10 +2,12 @@
 <!-- http://localhost:3000/isolated/final/01.html -->
 
 <body>
-  <div id="root"></div>
   <script type="module">
-    const rootElement = document.getElementById('root')
+    const rootElement = document.createElement('root')
+    rootElement.setAttribute('id', 'root')
+
     const element = document.createElement('div')
+    document.body.append(rootElement)
     element.textContent = 'Hello World'
     element.className = 'container'
     rootElement.append(element)
